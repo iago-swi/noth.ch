@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Dark background matching --ink token -->
+  <rect width="32" height="32" rx="3" fill="#0E0E10"/>
+  <!-- Serif "n." — lowercase n in bone, period in ember (#C8A06B), echoing the noth.ch title motif -->
+  <text y="24" font-family="Georgia,'Times New Roman',serif" font-size="22">
+    <tspan x="5" fill="#E8E4DC">n</tspan><tspan fill="#C8A06B">.</tspan>
+  </text>
+</svg>

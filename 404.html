@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>if(localStorage.getItem('theme')==='light')document.documentElement.setAttribute('data-theme','light');</script>
+<title>404 — noth.ch</title>
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="/en/index.html" class="brand">
+      <img src="/images/portrait-ia-small.jpg" alt="Portrait" class="brand-avatar" />
+      <div class="brand-info">
+        <span>Philippe Noth</span>
+        <span>Valais</span>
+        <span>Switzerland</span>
+      </div>
+    </a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    </button>
+    <div class="header-meta">
+      <nav class="lang-switch">
+        <a href="/en/index.html" class="lang-link active">EN</a>
+        <div class="lang-others">
+          <a href="/fr/index.html" class="lang-link">FR</a>
+          <a href="/de/index.html" class="lang-link">DE</a>
+          <a href="/it/index.html" class="lang-link">IT</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 404 -->
+  <section class="not-found">
+    <span class="eyebrow">— Error · 404</span>
+    <h1 class="title">4<span class="ember">0</span>4</h1>
+    <p>This page doesn't exist — or no longer does.</p>
+    <a href="/en/index.html" class="back-link ulink">← Back home</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-row">
+      <span>© May 2026 · noth.ch</span>
+      <div class="footer-links">
+        <a href="mailto:contact@noth.ch" class="ulink">✉&thinsp;contact@noth.ch</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+document.getElementById('theme-toggle').addEventListener('click',function(){
+  var h=document.documentElement;
+  if(h.getAttribute('data-theme')==='light'){h.removeAttribute('data-theme');localStorage.removeItem('theme');}
+  else{h.setAttribute('data-theme','light');localStorage.setItem('theme','light');}
+});
+</script>
+</body>
+</html>

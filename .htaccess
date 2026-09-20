@@ -1,0 +1,28 @@
+RewriteEngine On
+RewriteBase /
+
+# ── Language redirect (root only) ────────────────────────────────────────────
+# Reads the browser's Accept-Language header (e.g. "fr-CH,fr;q=0.9,en;q=0.8")
+# ^fr / ^de / ^it matches if that language is the highest-priority preference.
+# Rules are checked in order; first match wins. R=302 (not 301) so browsers
+# don't permanently cache the redirect if the user changes their language.
+
+# Language detection — redirect root to matching subfolder
+RewriteCond %{REQUEST_URI} ^/?$
+RewriteCond %{HTTP:Accept-Language} ^fr [NC]
+RewriteRule ^ /fr/index.html [R=302,L]
+
+RewriteCond %{REQUEST_URI} ^/?$
+RewriteCond %{HTTP:Accept-Language} ^de [NC]
+RewriteRule ^ /de/index.html [R=302,L]
+
+RewriteCond %{REQUEST_URI} ^/?$
+RewriteCond %{HTTP:Accept-Language} ^it [NC]
+RewriteRule ^ /it/index.html [R=302,L]
+
+# Default fallback → English
+RewriteCond %{REQUEST_URI} ^/?$
+RewriteRule ^ /en/index.html [R=302,L]
+
+# ── Custom 404 page ───────────────────────────────────────────────────────────
+ErrorDocument 404 /404.html
