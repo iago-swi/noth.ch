@@ -56,6 +56,8 @@ All styling lives in [css/style.css](css/style.css). No CSS framework. Structure
 
 ### Design Tokens
 
+> **Full design system:** [design-system.md](design-system.md) covers colour (dark + light themes), typography, spacing, imagery, motion and a checklist for new components. Read it before any visual or CSS change, or before adding a new component.
+
 ```css
 --ink:   #0E0E10  /* charcoal background */
 --bone:  #E8E4DC  /* primary text */
