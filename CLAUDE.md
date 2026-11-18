@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**noth.ch** is a static multilingual personal portfolio website for Philippe Noth. Pure HTML + CSS — no build step, no JavaScript framework, no package manager.
+**noth.ch** is a static multilingual personal portfolio website for Philippe Noth. Pure HTML + CSS — no build step, no JavaScript framework, no package manager. JavaScript is limited to the inline light/dark theme toggle in each page and the Google Analytics `gtag` snippet (all pages except `404.html`). `js/script.js` is an empty placeholder.
 
 ## Development
 
@@ -35,7 +35,7 @@ All content is duplicated across four language folders:
   ai_it_mathematics.html
 ```
 
-Language routing is handled by `.htaccess` via Apache `Accept-Language` detection (302 redirects). The root `index.html` is a redirect fallback; the real entry points are in `en/`, `fr/`, `de/`, `it/`.
+Language routing is handled by `.htaccess` via Apache `Accept-Language` detection (302 redirects). The root `index.html` is a standalone copy of the English homepage (root-relative links), served when the redirect doesn't apply (e.g. local servers, which ignore `.htaccess`). The real entry points are in `en/`, `fr/`, `de/`, `it/`. Keep the root `index.html` in sync with `en/index.html`.
 
 When editing content, changes must be propagated to all four language folders manually.
 
@@ -81,11 +81,11 @@ Social icon tooltips are pure CSS via `::after` pseudo-elements using `data-tool
 
 ### HTML Conventions
 
-- `<body id="top">` on every page — required for the footer `↑` scroll anchor (`href="#top"`).
+- `<body id="top">` on every language page (`en/`, `fr/`, `de/`, `it/`) — required for the footer `↑` scroll anchor (`href="#top"`). The root `index.html` and `404.html` have no `↑` link and no `id="top"`.
 - Footer copyright: `noth<span class="ember">.</span>ch` — the ember dot is part of the brand.
-- All pages include Open Graph meta tags (`og:title`, `og:description`, `og:type`, `og:url`).
+- All language pages include Open Graph meta tags (`og:title`, `og:description`, `og:type`, `og:url`). The root `index.html` and `404.html` don't.
 - Language-specific back-link text: EN "← All interests" · FR "← Tous les intérêts" · DE "← Alle Interessen" · IT "← Tutti gli interessi".
 
 ### Images
 
-Content images are referenced via CSS background-image classes (`.img-translation`, `.img-travel`, `.img-hiking`, `.img-ai`) and `<img>` tags. Image files live in `images/`. Unsplash URLs can be swapped into the CSS classes without touching HTML.
+Content images are referenced via CSS background-image classes (`.img-translation`, `.img-travel`, `.img-hiking`, `.img-ai`) and `<img>` tags. Image files live in `images/`. Card images can be swapped in those CSS classes (local file or URL) without touching HTML.

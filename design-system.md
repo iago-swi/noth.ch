@@ -32,7 +32,7 @@ Tokens are semantic, so components should only reference `var(--…)`. Hard-code
 
 ### Rules
 - Muted text is **always** `var(--dust)`. Never use raw `rgba(232,228,220,0.7)`.
-- Ember is an **accent**, not a fill: it marks the dot in `noth.ch`, hover states, focus outlines, the "Available" dot and inline links like `.book-card-link`. Never use it for large areas or body text.
+- Ember is an **accent**, not a fill: it marks the dot in `noth.ch`, italic `&` separators, hover states, focus outlines and inline links like `.book-card-link`. Never use it for large areas or body text.
 - Borders are hairlines (`1px`) in bone at low alpha:
   - `0.08` image frames · `0.10` footer rule, book card · `0.12` tags, book covers · `0.20` avatar
   - Hover border: `rgba(200,160,107,0.35)` (ember at 35 %). Light mode: `rgba(160,104,48,0.4)`.
