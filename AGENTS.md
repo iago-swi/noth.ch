@@ -83,7 +83,7 @@ Social icon tooltips are pure CSS via `::after` pseudo-elements using `data-tool
 
 - `<body id="top">` on every language page (`en/`, `fr/`, `de/`, `it/`) — required for the footer `↑` scroll anchor (`href="#top"`). The root `index.html` and `404.html` have no `↑` link and no `id="top"`.
 - Footer copyright: `noth<span class="ember">.</span>ch` — the ember dot is part of the brand.
-- All language pages include Open Graph meta tags (`og:title`, `og:description`, `og:type`, `og:url`). The root `index.html` and `404.html` don't.
+- All language pages and the root `index.html` (`og:url` = `https://noth.ch/`) include Open Graph meta tags (`og:title`, `og:description`, `og:type`, `og:url`). `404.html` doesn't.
 - Language-specific back-link text: EN "← All interests" · FR "← Tous les intérêts" · DE "← Alle Interessen" · IT "← Tutti gli interessi".
 
 ### Images
